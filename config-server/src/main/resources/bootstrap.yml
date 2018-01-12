@@ -1,0 +1,42 @@
+#应用端口
+server:
+  port: 8001
+
+spring:
+  application:
+      name: config-server #应用名称
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/maijf/SpringCloudConfig.git #Git仓库位置
+          searchPaths: /* #仓库下的查找地址
+  #配置RabbitMQ
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: test
+    password: 123456
+
+#eureka注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.9.177:8000/eureka/
+
+#RSA密钥证书配置
+#/encrypt/status：查看加密功能状态的端点，/key：查看密钥的端点，/encrypt：对请求的body内容进行加密的端点，/decrypt：对请求的body内容进行解密的端点
+encrypt:
+  keyStore:
+    location: classpath:/config-server.jks #证书位置(该证书有效期2019.01.02)
+    alias: config-server #别名
+    password: 123456 #密钥库口令
+    secret: 123456 #密钥口令
+
+#httpBasic验证
+security:
+  basic:
+    enabled: true
+  user:
+    name: admin
+    password: 123456

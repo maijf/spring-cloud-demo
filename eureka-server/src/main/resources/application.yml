@@ -1,0 +1,17 @@
+#应用端口
+server:
+  port: 8000
+
+#eureka配置
+eureka:
+  instance:
+    hostname: localhost #主机名
+  client:
+    registerWithEureka: false #是否注册为服务
+    fetchRegistry: false #是否检索服务
+    serviceUrl: #eureka默认空间的地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#测试环境关闭自我保护，生产环境下不建议自定义这些配置。
+  server:
+    enable-self-preservation: false # 设为false，关闭自我保护
+    eviction-interval-timer-in-ms: 5000 # 清理间隔（单位毫秒，默认是60*1000）

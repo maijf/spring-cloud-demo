@@ -1,0 +1,23 @@
+#应用端口
+server:
+  port: 8020
+
+spring:
+  application:
+    name: test2-service #应用名称
+  cloud:
+    config:
+      username: admin
+      password: 123456
+      discovery:
+        enabled: true #开启Config服务发现支持
+        serviceId: config-server #指定Config服务的serviceId
+      label: develop #版本
+      profile: dev #环境
+      failFast: true #失败快速响应
+
+#eureka注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.9.177:8000/eureka/

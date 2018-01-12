@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+*.iml
+eureka-server/target
+config-server/target
+zipkin-server/target
+zuul-service/target
+test1-service/target
+test2-service/target
+turbine-service/target
