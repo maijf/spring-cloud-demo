@@ -9,7 +9,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/maijf/SpringCloudConfig.git #Git仓库位置
+          uri: https://github.com/maijf/spring-cloud-config.git #Git仓库位置
           searchPaths: /* #仓库下的查找地址
   #配置RabbitMQ
   rabbitmq:
